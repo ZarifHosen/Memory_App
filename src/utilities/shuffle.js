@@ -12,7 +12,9 @@ function shuffle() {
 
     ]
 
-    return [...assets, ...assets].sort(() => Math.random() - 0.5).map(asset => asset.image)
+    return [...assets, ...assets]
+        .sort(() => Math.random() - 0.5)
+        .map((card) => ({ ...card, id: Math.random() }))
 }
 
 export default shuffle
